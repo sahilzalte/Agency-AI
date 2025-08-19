@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import assets from '../assets/assets'
+import ThemeToggleBtn from './ThemeToggleBtn'
 
 const Navbar = ({ theme, setTheme }) => {
     const [sideBarOpen, setSideBarOpen] = useState(false)
@@ -21,6 +22,7 @@ const Navbar = ({ theme, setTheme }) => {
 
                 <div className='flex items-center gap-2 sm:gap-4'>
 
+                    <ThemeToggleBtn theme={theme} setTheme={setTheme} />
                     <img src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon} alt="" onClick={() => setSideBarOpen(true)} className='w-8 sm:hidden' />
 
                     <a href="#contact-us" className='text-sm max-sm:hidden flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all'>
